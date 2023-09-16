@@ -1,0 +1,15 @@
+EF Core 7 筆記
+
+1.使用 include 方法
+	a.兩張 Table 需要加上 Key
+	b.補上 FK 設定
+		一對一: 加上 HasOne().WithOne().HasForeignKey<主要指定FK的Entity>()
+		一對多: 加上 HasOne().WithMany().HasForeignKey()
+	c.判斷inner join 和 left join 的差別是
+		開始資料由設定為主要FK的Entity執行，如果Key可以為null時，代表資料會是LeftJoin，但如果key不可或是本身為HasKey時，為null代表是InnerJoin
+		開始資料由設定為非FK的Entity執行時，資料都是LeftJoin
+		
+		
+		
+
+	
